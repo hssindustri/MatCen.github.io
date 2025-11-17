@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MatCen — Material Center</title>
+  <meta name="description" content="MatCen: Marketplace penghubung Supplier bahan baku dengan Pelaku Industri dalam negeri. Informasi kategori bahan, program pemerintah, dan kontak.">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#0f172a">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#"><span class="logo">⚙️</span> <span class="brand-text">MatCen</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">Tentang</a>
+        <a href="#categories">Kategori</a>
+        <a href="#programs">Program</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn" aria-expanded="false">☰</button>
+    </div>
+
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <a href="#about">Tentang</a>
+      <a href="#categories">Kategori</a>
+      <a href="#programs">Program</a>
+      <a href="#contact">Kontak</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>MatCen — Material Center</h1>
+          <p class="lead">Platform penghubung <strong>Supplier</strong> bahan baku dengan <strong>Pelaku Industri</strong> dalam negeri, diawasi oleh Pemerintah. Temukan bahan, program dukungan, dan informasi regulasi di satu tempat.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="#categories">Telusuri Kategori</a>
+            <a class="btn ghost" href="#programs">Info Program Pemerintah</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card-surface">
+            <h3>Bagaimana MatCen Bekerja</h3>
+            <ol>
+              <li>Supplier mendaftar & unggah produk bahan baku.</li>
+              <li>Industri mencari & memesan sesuai kebutuhan.</li>
+              <li>Pemerintah memantau & memberikan dukungan program.</li>
+            </ol>
+            <p class="muted">Contoh kategori: Aluminium, Kuningan, Kapas, Karet, Plastik, Besi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container card-section">
+      <div class="card">
+        <h2>Tentang MatCen</h2>
+        <p>MatCen bertujuan memperpendek rantai pasok bahan baku bagi industri dalam negeri dan menyediakan kanal resmi untuk informasi program pemerintah yang relevan. Platform ini memungkinkan transparansi harga, verifikasi supplier, dan notifikasi program subsidi atau insentif.</p>
+      </div>
+    </section>
+
+    <section id="categories" class="container categories-section">
+      <h2 class="section-title">Kategori Bahan Baku</h2>
+      <p class="muted">Pilih kategori untuk melihat supplier dan produk terkait.</p>
+
+      <div class="category-controls">
+        <input id="searchInput" type="search" placeholder="Cari kategori (mis. aluminium)" />
+        <select id="filterSelect">
+          <option value="all">Semua Kategori</option>
+          <option value="metal">Logam</option>
+          <option value="textile">Tekstil</option>
+          <option value="polymer">Polimer</option>
+        </select>
+      </div>
+
+      <div id="categoriesGrid" class="grid categories-grid">
+        <!-- cards akan diisi oleh JS -->
+      </div>
+    </section>
+
+    <section id="programs" class="container card-section">
+      <h2 class="section-title">Informasi Program Pemerintah</h2>
+      <div class="programs">
+        <article class="program">
+          <h3>Program A: Insentif Lokal</h3>
+          <p>Deskripsi singkat program insentif untuk penggunaan bahan lokal oleh industri manufaktur.</p>
+          <a class="link" href="#" target="_blank">Baca selengkapnya →</a>
+        </article>
+
+        <article class="program">
+          <h3>Program B: Subsidi Pengadaan</h3>
+          <p>Skema dukungan pengadaan bahan baku untuk UMKM dan industri kecil-menengah.</p>
+          <a class="link" href="#" target="_blank">Baca selengkapnya →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container card-section">
+      <div class="card contact-card">
+        <h2>Kontak & Dukungan</h2>
+        <p>Butuh bantuan untuk mendaftar sebagai supplier atau ingin bertanya tentang program pemerintah? Isi pesan singkat di bawah atau hubungi email:</p>
+        <p>Email: <a href="mailto:support@matcen.example">support@matcen.example</a></p>
+
+        <form id="contactForm" class="contact-form" onsubmit="return false;">
+          <input id="name" type="text" placeholder="Nama" required />
+          <input id="email" type="email" placeholder="Email" required />
+          <textarea id="message" rows="4" placeholder="Pesan..." required></textarea>
+          <div class="form-actions">
+            <button id="sendBtn" class="btn primary" type="submit">Kirim Pesan</button>
+            <button id="resetBtn" class="btn ghost" type="button">Reset</button>
+          </div>
+          <p id="formStatus" class="muted" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © <span id="year"></span> MatCen — Platform Bahan Baku Nasional
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
